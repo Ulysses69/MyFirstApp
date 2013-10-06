@@ -1,4 +1,4 @@
 MyFirstApp
 ==========
 
-My first cross-platform mobile app
+My first cross-platform mobile app.
