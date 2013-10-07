@@ -10,10 +10,21 @@ body {
 	background: #000000;
 	color: #ffffff;
 	font: normal 0.9em Swis721;
+	padding: 5%;
 }
 a {
 	color: #ffffff;
 }
+h1 {
+	margin: 0;
+	padding: 0;
+}
 h2 {
 	font-size: 120%;
+	margin: 0;
+	padding: 0;
+}
+ul {
+	margin: 0.5em 0 0.5em 1em;
+	padding: 0;
 }
