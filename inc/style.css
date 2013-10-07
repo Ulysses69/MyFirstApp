@@ -1,0 +1,19 @@
+@font-face {
+	font-family: 'Swis721';
+	src: url('font/Swis721.eot');
+	src: url('font/Swis721.eot?#iefix') format('embedded-opentype'), 
+         url('font/Swis721.woff') format('woff'),
+         url('font/Swis721.ttf') format('truetype'),
+         url('font/Swis721.svg#Swis721') format('svg');
+}
+body {
+	background: #000000;
+	color: #ffffff;
+	font: normal 0.9em Swis721;
+}
+a {
+	color: #ffffff;
+}
+h2 {
+	font-size: 120%;
+}
