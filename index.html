@@ -5,23 +5,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
 <title>My First App</title>
 <link type="text/css" href="inc/style.css" rel="stylesheet" media="screen">
+<script type="text/javascript">
+    window.onload = function () {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = "http://jsonip.appspot.com/?callback=DisplayIP";
+        document.getElementsByTagName("head")[0].appendChild(script);
+    };
+    function DisplayIP(response) {
+        document.getElementById("ipaddress").innerHTML = "IP Address: " + response.ip + "<br>";
+    }
+</script>
 </head>
 <body>
 
-<h1>My First App <em>1.0.1</em></h1>
+<h1>My First App <em>1.0.2</em></h1>
 
 <p>This app has been designed for testing how to develop and deploy an app.</p>
 <p>Built using hardcoded HTML then uploaded to <a href="https://github.com/Ulysses69/MyFirstApp">GitHub</a> and compiled through <a href="https://build.phonegap.com/apps">Adobe PhoneGap Build</a>.</p>
 
-<h2>Build 1.0.1</h2>
+<h2>Build 1.0.2</h2>
 <ul>
 <li>Sample app icons</li>
 <li>Heading and message</li>
 <li>App icon disclaimer</li>
 <li>Added some font styling</li>
 <li>Set viewport meta</li>
+<li>IP address Check</li>
 </ul>
 
+<small id="ipaddress"></small>
 <small>App icon design by <a href="http://devcenter.kinvey.com/phonegap/samples/testdrive">Kinvey</a></small>
 
 </body>
