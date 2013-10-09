@@ -4,7 +4,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id = "MyFirstApp"
-        version = "1.0.2">
+        version = "1.0.3">
 
     <name>MyFirstApp</name>
 
@@ -15,12 +15,6 @@
     <author href="https://github.com/Ulysses69" email="steven@poppymedia.co.uk">
         Ulysses69
     </author>
-
-    <!--
-Enable individual API permissions here.
-The "device" permission is required for the 'deviceready' event.
--->
-    <feature name="http://api.phonegap.com/1.0/device" />
 
     <!--
 If you do not want any permissions to be added to your app, add the
@@ -46,7 +40,14 @@ permission on your app, which PhoneGap requires.
     <preference name="android-minSdkVersion" value="7" /> <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-installLocation" value="auto" /> <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
+	<feature name="http://api.phonegap.com/1.0/file"/>
+	<feature name="http://api.phonegap.com/1.0/geolocation"/>
+	<feature name="http://api.phonegap.com/1.0/media"/>
+	<feature name="http://api.phonegap.com/1.0/network"/>
+	<feature name="http://api.phonegap.com/1.0/notification"/>
+
     <!-- Plugins can also be added here. -->
+    <plugin name="Geolocation" value="CDVLocation" />
     <!--
 <gap:plugin name="Example" />
 A list of available plugins are available at https://build.phonegap.com/docs/plugins
@@ -66,6 +67,24 @@ A list of available plugins are available at https://build.phonegap.com/docs/plu
     <icon src="inc/res/icon/webos/icon-64.png" gap:platform="webos" />
     <icon src="inc/res/icon/windows-phone/icon-48.png" gap:platform="winphone" />
     <icon src="inc/res/icon/windows-phone/icon-173.png" gap:platform="winphone" gap:role="background" />
+
+	<!-- Define app splash screen for IOS platform. -->
+	<gap:splash src="inc/splash/ios/default.png" width="320" height="480" /><!-- Regular iPhone4 -->
+	<gap:splash src="inc/splash/ios/default.png" width="640" height="960" /><!-- Retina iPhone4 -->
+	<gap:splash src="inc/splash/ios/default.png" width="640" height="1136" /><!-- iPhone5 -->
+
+	<gap:splash src="inc/splash/ios/default.png"  gap:platform="ios" width="768"  height="1004" /><!-- iPad Portrait -->
+	<gap:splash src="inc/splash/ios/default.png"  gap:platform="ios" width="1024" height="748"  /><!-- iPad Landscape -->
+
+	<!-- Retina iPads: Requires PhoneGap 2.5.0 or higher -->
+	<gap:splash src="inc/splash/ios/default.png" gap:platform="ios" width="1536" height="2008" /><!-- Portrait -->
+	<gap:splash src="inc/splash/ios/default.png" gap:platform="ios" width="2048" height="1496" /><!-- Landscape -->
+
+	<gap:splash src="inc/splash/android/default.png" gap:platform="android" gap:density="ldpi"  width="320" height="426" />
+	<gap:splash src="inc/splash/android/default.png" gap:platform="android" gap:density="mdpi"  width="320" height="470" />
+	<gap:splash src="inc/splash/android/default.png" gap:platform="android" gap:density="hdpi"  width="480" height="640" />
+	<gap:splash src="inc/splash/android/default.png" gap:platform="android" gap:density="xhdpi" width="720" height="960" />
+
 <!--
 Define access to external domains.
 

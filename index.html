@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
 <title>My First App</title>
 <link type="text/css" href="inc/style.css" rel="stylesheet" media="screen">
+<!--
 <script type="text/javascript">
     window.onload = function () {
         var script = document.createElement("script");
@@ -16,25 +17,62 @@
         document.getElementById("ipaddress").innerHTML = "IP Address: " + response.ip + "<br>";
     }
 </script>
+-->
+<script type="text/javascript" charset="utf-8" src="cordova-2.4.0.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+	var element = document.getElementById('geolocation');
+
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+
+    // onSuccess Geolocation
+    //
+    function onSuccess(position) {
+        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                            'Longitude: '          + position.coords.longitude             + '<br />' +
+                            'Altitude: '           + position.coords.altitude              + '<br />' +
+                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                            'Heading: '            + position.coords.heading               + '<br />' +
+                            'Speed: '              + position.coords.speed                 + '<br />' +
+                            'Timestamp: '          +                                   position.timestamp          + '<br />';
+    }
+
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        element.innerHTML = error.code    + '\n' + 'message: ' + error.message + '\n';
+        //alert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
+    }
+
+</script>
 </head>
 <body>
 
-<h1>My First App <em>1.0.2</em></h1>
+<h1>My First App <em>1.0.3</em></h1>
 
 <p>This app has been designed for testing how to develop and deploy an app.</p>
 <p>Built using hardcoded HTML then uploaded to <a href="https://github.com/Ulysses69/MyFirstApp">GitHub</a> and compiled through <a href="https://build.phonegap.com/apps">Adobe PhoneGap Build</a>.</p>
 
-<h2>Build 1.0.2</h2>
+<h2>Build 1.0.3</h2>
 <ul>
 <li>Sample app icons</li>
 <li>Heading and message</li>
 <li>App icon disclaimer</li>
 <li>Added some font styling</li>
 <li>Set viewport meta</li>
-<li>IP address check</li>
+<li>GEO Stats</li>
 </ul>
 
-<small id="ipaddress"></small>
+<small id="geolocation"></small>
 <small>App icon design by <a href="http://devcenter.kinvey.com/phonegap/samples/testdrive">Kinvey</a></small>
 
 </body>
